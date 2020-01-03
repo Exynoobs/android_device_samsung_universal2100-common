@@ -232,6 +232,10 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor:64 \
     secril_config_svc
 
+# SamsungDoze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.contexthub@1.0.vendor:64 \
