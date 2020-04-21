@@ -431,6 +431,10 @@ on post-fs-data
     chown system audio /sys/class/audio/amp/excursion_max_1
     chown system audio /sys/class/audio/amp/excursion_overcount_1
 
+#Reverse Wireless charging
+    chown system system /sys/class/power_supply/battery/wc_tx_en
+    chmod 0664 /sys/class/power_supply/battery/wc_tx_en
+
 # Cirrus Amp Calibration and Factory test
     chown system audio /sys/class/cirrus/cirrus_cal/status
     chown system audio /sys/class/cirrus/cirrus_cal/rdc
