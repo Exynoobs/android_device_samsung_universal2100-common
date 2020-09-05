@@ -177,6 +177,10 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.0.vendor:64 \
     android.hardware.power-service.samsung-libperfmgr
 
+# Public Libraries
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/configs/linker/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
