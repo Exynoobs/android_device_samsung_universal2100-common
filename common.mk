@@ -73,6 +73,10 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor:64
 
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.5-service_64
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.4-service
