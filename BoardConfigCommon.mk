@@ -15,6 +15,10 @@
 
 COMMON_PATH := device/samsung/universal2100-common
 
+# Include path
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+
+
 # Inherit proprietary vendor configuration
 include vendor/samsung/universal2100-common/BoardConfigVendor.mk
 
