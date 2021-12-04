@@ -15,6 +15,8 @@
 
 COMMON_PATH := device/samsung/universal2100-common
 
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
