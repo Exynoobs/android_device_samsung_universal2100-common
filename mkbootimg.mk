@@ -54,3 +54,14 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) $(AVBTOOL) $(recovery_ramdisk) $
 	  --partition_name recovery $(INTERNAL_AVB_RECOVERY_SIGNING_ARGS) \
 	  $(BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS)
 	@echo "Made recovery image: $@"
+
+$(INSTALLED_VENDOR_BOOTIMAGE_TARGET): $(MKBOOTIMG) $(AVBTOOL) $(INSTALLED_DTBIMAGE_TARGET) $(BOARD_AVB_VENDOR_BOOTIMAGE_KEY_PATH)
+	$(call pretty,"Target vendor_boot image: $@")
+	$(hide) $(MKBOOTIMG) $(INTERNAL_VENDOR_BOOTIMAGE_ARGS) $(INTERNAL_MKBOOTIMG_VERSION_ARGS) $(BOARD_MKBOOTIMG_ARGS) --vendor_ramdisk $(INTERNAL_VENDOR_RAMDISK_TARGET) --dtb $(INSTALLED_DTBIMAGE_TARGET) --vendor_boot $@
+	$(call assert-max-image-size,$@,$(BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE))
+	$(hide) $(AVBTOOL) add_hash_footer \
+	  --image $@ \
+	  --partition_size $(BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE) \
+	  --partition_name vendor_boot $(INTERNAL_AVB_VENDOR_BOOT_SIGNING_ARGS) \
+	  $(BOARD_AVB_VENDOR_BOOT_ADD_HASH_FOOTER_ARGS)
+	@echo "Made vendor_boot image: $@"
