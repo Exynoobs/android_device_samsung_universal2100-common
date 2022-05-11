@@ -1,0 +1,4 @@
+# Proprietary files - from Samsung package version G991BXXU5CVDD, unless pinned
+
+# TSP firmware
+vendor/firmware/y792_o1.bin
