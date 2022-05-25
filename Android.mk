@@ -18,4 +18,20 @@ LOCAL_PATH := $(call my-dir)
 
 ifneq ($(filter o1s, $(TARGET_DEVICE)),)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
+subdir_makefiles=$(call first-makefiles-under,$(LOCAL_PATH))
+$(foreach mk,$(subdir_makefiles),$(info including $(mk) ...)$(eval include $(mk)))
+
+include $(CLEAR_VARS)
+
+RECOVERY_KERNEL_MODULES := $(addprefix $(TARGET_RECOVERY_ROOT_OUT)/lib/modules/,$(shell cat device/samsung/universal2100-common/modules.load))
+
+INSTALLED_KERNEL_TARGET := $(PRODUCT_OUT)/kernel
+INTERNAL_RECOVERY_RAMDISK_FILES_TIMESTAMP := $(call intermediates-dir-for,PACKAGING,recovery)/ramdisk_files-timestamp
+
+$(RECOVERY_KERNEL_MODULES): $(INSTALLED_KERNEL_TARGET)
+	@echo "Copying kernel modules to recovery ramdisk: $@"
+	@mkdir -p $(dir $@)
+	cp -r $(TARGET_VENDOR_RAMDISK_OUT)/lib/ $(TARGET_RECOVERY_ROOT_OUT)/
+
+$(INTERNAL_RECOVERY_RAMDISK_FILES_TIMESTAMP): $(RECOVERY_KERNEL_MODULES)
 endif
