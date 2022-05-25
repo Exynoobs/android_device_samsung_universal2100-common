@@ -28,7 +28,11 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/init/fstab.exynos2100:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.exynos2100 \
     $(COMMON_PATH)/configs/init/fstab.exynos2100:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/fstab.exynos2100 \
     $(COMMON_PATH)/configs/init/fstab.universal2100:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.exynos2100 \
-    $(COMMON_PATH)/configs/init/init.recovery.exynos2100.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos2100.rc
+    $(COMMON_PATH)/configs/init/init.exynos2100.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos2100.rc \
+    $(COMMON_PATH)/configs/init/init.exynos2100.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.exynos2100.usb.rc \
+    $(COMMON_PATH)/configs/init/init.recovery.exynos2100.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.exynos2100.rc \
+    $(COMMON_PATH)/configs/init/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
+    $(COMMON_PATH)/configs/init/init.udfps.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.udfps.rc
 
 # Recovery/vendor_boot firmware
 PRODUCT_COPY_FILES += \
