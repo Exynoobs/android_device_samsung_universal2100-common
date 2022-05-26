@@ -19,6 +19,8 @@ COMMON_PATH := device/samsung/universal2100-common
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/samsung/universal2100-common/universal2100-common-vendor.mk)
 
+PRODUCT_SHIPPING_API_LEVEL := 30
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@6.0-impl:32 \
