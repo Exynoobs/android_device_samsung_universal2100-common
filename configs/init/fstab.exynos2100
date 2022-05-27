@@ -16,3 +16,4 @@ odm	/odm	ext4	ro	wait,logical,first_stage_mount
 /devices/platform/132e0000.dwmmc2/mmc_host*    auto    auto    default    voldmanaged=sdcard:auto
 /devices/platform/10e00000.usb*                auto    vfat    default    voldmanaged=usb:auto
 /dev/block/zram0                                   none                swap      defaults                                              wait,zramsize=3221225472
+/dev/block/by-name/recovery     /recovery         emmc  defaults                                                                                            defaults,recoveryonly
