@@ -1,0 +1,9 @@
+on fs
+    rm /cache/logcat.${ro.hardware}.txt
+    start logcat_cache
+
+service logcat_cache /system/bin/logcat -b all -f /cache/logcat.${ro.hardware}.txt -v threadtime
+    class main
+    user root
+    group system
+    disabled
