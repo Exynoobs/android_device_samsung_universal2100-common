@@ -119,6 +119,10 @@ PRODUCT_PACKAGES += \
    libhwbinder \
    libhwbinder.vendor
 
+# OMX
+PRODUCT_PACKAGES += \
+    libepicoperator
+
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
