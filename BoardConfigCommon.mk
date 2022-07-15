@@ -22,6 +22,12 @@ TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 # Inherit proprietary vendor configuration
 include vendor/samsung/universal2100-common/BoardConfigVendor.mk
 
+# Platform
+BOARD_VENDOR := samsung
+TARGET_BOARD_PLATFORM := universal2100
+TARGET_BOOTLOADER_BOARD_NAME := exynos2100
+TARGET_SOC := exynos2100
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -124,12 +130,6 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 BOARD_USES_METADATA_PARTITION := true
 
 BOARD_ROOT_EXTRA_FOLDERS := efs
-
-# Platform
-BOARD_VENDOR := samsung
-TARGET_BOARD_PLATFORM := universal2100
-TARGET_BOOTLOADER_BOARD_NAME := exynos2100
-TARGET_SOC := exynos2100
 
 # Properties
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
