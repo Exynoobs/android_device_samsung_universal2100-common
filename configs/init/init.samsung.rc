@@ -850,6 +850,8 @@ on boot
     chown system radio /sys/class/sensors/grip_sensor_wifi/grip_check_2ch
     chown system radio /sys/class/sensors/grip_sensor_wifi/motion
     chown system radio /sys/class/sensors/grip_sensor_wifi/unknown_state
+    chown system radio /sys/class/sensors/grip_sensor_wifi/unknown_state_2ch
+    chown system radio /sys/class/sensors/grip_sensor_wifi/noti_enable
     # ] Permissions for Grip Sensor
 
     # Firmware CUSTOMIZED_PATH
