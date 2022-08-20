@@ -1004,3 +1004,6 @@ service watchdogd /system/bin/watchdogd 10 30
     oneshot
     priority -10
     seclabel u:r:watchdogd:s0
+
+on property:sys.boot_completed=1
+    restart vendor.sensors-hal-multihal
