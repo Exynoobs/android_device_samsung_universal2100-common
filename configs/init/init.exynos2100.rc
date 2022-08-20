@@ -1016,3 +1016,6 @@ on property:ro.bootmode=charger
     mkdir /efs/lpm 0775 system system
     trigger firmware_mounts_complete
     class_start sec-charger
+
+on property:sys.boot_completed=1
+    restart vendor.sensors-hal-2-1-multihal
