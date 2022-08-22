@@ -1004,17 +1004,3 @@ service watchdogd /system/bin/watchdogd 10 30
     oneshot
     priority -10
     seclabel u:r:watchdogd:s0
-
-# LPM
-on property:ro.bootmode=charger
-    wait /dev/block/by-name/sec_efs
-    mount ext4 /dev/block/by-name/sec_efs /efs nosuid nodev noatime noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic
-    chown radio system /efs
-    chmod 0771 /efs
-    chown radio system /efs/usb_hw_param
-    chmod 771 /efs/usb_hw_param
-    chown system system /efs/usb_hw_param/usb_hw_param.log
-    chmod 0660 /efs/usb_hw_param/usb_hw_param.log
-    mkdir /efs/lpm 0775 system system
-    trigger firmware_mounts_complete
-    class_start sec-charger
