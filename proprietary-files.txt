@@ -131,6 +131,10 @@ vendor/etc/media_profiles_V1_0.xml
 vendor/etc/seccomp_policy/mediacodec.policy
 vendor/etc/seccomp_policy/mediaextractor_sec.policy
 
+# DRK
+-vendor/lib/vendor.samsung.hardware.security.drk@2.0.so
+-vendor/lib64/vendor.samsung.hardware.security.drk@2.0.so
+
 # Eden Runtime
 -vendor/bin/hw/vendor.samsung_slsi.hardware.eden_runtime@1.0-service
 vendor/etc/eden/gpu/eden_kernel_64.bin
