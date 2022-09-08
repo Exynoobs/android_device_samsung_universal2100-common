@@ -401,6 +401,8 @@ on post-fs-data
     mkdir /data/vendor/log 0771 root system
     mkdir /data/vendor/log/abox 0775 audioserver system
 
+    mkdir /data/vendor/gatekeeper 0770 system system
+
     setprop vold.post_fs_data_done 1
     setprop sys.usb.controller 10e00000.usb
 
