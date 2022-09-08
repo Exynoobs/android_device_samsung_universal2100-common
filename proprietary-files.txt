@@ -243,10 +243,23 @@ vendor/etc/sensor/lhd.conf
 -vendor/lib64/libion_exynos.so
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service.rc
 
+# Hwvault
+-vendor/lib64/libhwvault.so
+-vendor/lib64/libshctrl.so
+
+# Hermes
+-vendor/bin/hermesd
+-vendor/lib/libhermes.so
+-vendor/lib64/libdk_vnd_service_core.so
+-vendor/lib64/libhermes.so
+-vendor/lib64/libhermes_bdbridge.so
+-vendor/lib64/libhermes_cred.so
+-vendor/lib64/libese-grdg.so
+vendor/etc/init/hermesd.rc
+
 # Keymaster
 -vendor/lib64/libskeymaster4device.so
 -vendor/lib64/libkeymaster_helper.so
--vendor/lib64/libhermes_cred.so
 -vendor/bin/hw/android.hardware.keymaster@4.0_strongbox-service
 vendor/etc/init/android.hardware.keymaster@4.0_strongbox-service.rc
 
