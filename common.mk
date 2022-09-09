@@ -236,8 +236,7 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Memtrack
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl:64 \
-    android.hardware.memtrack@1.0-service
+    android.hardware.memtrack-service.samsung-mali
 
 # Neural networks
 PRODUCT_PACKAGES += \
