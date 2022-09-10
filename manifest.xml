@@ -183,6 +183,10 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl">
+        <name>android.hardware.power</name>
+        <fqname>IPower/default</fqname>
+    </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio</name>
         <transport>hwbinder</transport>
