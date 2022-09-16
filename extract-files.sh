@@ -66,6 +66,9 @@ function blob_fixup() {
         vendor/lib*/libexynosdisplay.so|vendor/lib*/hw/hwcomposer.exynos2100.so|vendor/lib*/sensors.*.so)
             "${PATCHELF}" --replace-needed libutils.so libutils-v32.so "${2}"
             ;;
+        vendor/bin/hw/rild)
+            "${PATCHELF}" --replace-needed libril.so libril-samsung.so "${2}"
+            ;;
     esac
 }
 

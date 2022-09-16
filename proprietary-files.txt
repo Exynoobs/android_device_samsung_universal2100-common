@@ -34,7 +34,6 @@ vendor/etc/usb_audio_policy_configuration.xml
 -vendor/lib/libprofileparamstorage.so
 -vendor/lib/libsecaudiocoreutils.so
 -vendor/lib/libsecaudioinfo.so
--vendor/lib/libsemnativecarrierfeature.so
 -vendor/lib/libspeakercalibration.so
 -vendor/lib/soundfx/libaudioeffectoffload.so
 -vendor/lib/soundfx/libaudiosaplus_sec.so
@@ -52,7 +51,6 @@ vendor/etc/usb_audio_policy_configuration.xml
 -vendor/lib64/libfloatingfeature.so
 -vendor/lib64/libsecaudiocoreutils.so
 -vendor/lib64/libsecaudioinfo.so
--vendor/lib64/libsemnativecarrierfeature.so
 -vendor/lib64/libspeakercalibration.so
 -vendor/lib64/soundfx/libaudioeffectoffload.so
 -vendor/lib64/soundfx/libaudiosaplus_sec.so
@@ -308,34 +306,35 @@ vendor/etc/init/android.hardware.neuralnetworks@1.3-service.eden-drv.rc
 
 # RIL
 -vendor/bin/cbd
--vendor/bin/hw/rild
 -vendor/lib/libaudio-ril.so
 -vendor/lib/libmdf.so
 -vendor/lib/libsec_semRil.so
 -vendor/lib/libsecnativefeature.so
 -vendor/lib/libsecril-client.so;MODULE=libsecril-client.exynos2100
 -vendor/lib/libsecure_storage.so
--vendor/lib64/libSemDataProps.so
--vendor/lib64/libSemTelephonyProps.so
 -vendor/lib64/libmdf.so
--vendor/lib64/libril_sem.so
 -vendor/lib64/libsec_semRil.so
 -vendor/lib64/libsecnativefeature.so
 -vendor/lib64/libsecril-client.so;MODULE=libsecril-client.exynos2100
 -vendor/lib64/libsecure_storage.so
 -vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so
--vendor/lib64/vendor.samsung.hardware.radio.bridge@2.1.so
 -vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so
 -vendor/lib64/vendor.samsung.hardware.radio@2.0.so
 -vendor/lib64/vendor.samsung.hardware.radio@2.1.so
--vendor/lib64/vendor.samsung.hardware.radio@2.2.so
-vendor/etc/init/init.baseband.rc
-vendor/etc/init/init.vendor.rilchip.rc
-vendor/etc/init/init.vendor.rilcommon.rc
 vendor/etc/plmn_delta.bin
 vendor/etc/plmn_delta_attaio.bin
 vendor/etc/plmn_delta_usagsm.bin
 vendor/etc/plmn_se13.bin
+
+## RIL - from o1s - G991BXXU1AUA4
+vendor/etc/init/init.baseband.rc|8f2154bd1343d3ff90c465b087b449c6dfc4576b
+vendor/etc/init/init.vendor.rilchip.rc|83d57882dfaefaaa21c5dd636bafd655dfaf0b10
+vendor/etc/init/init.vendor.rilcommon.rc|eb3115e335457fdc95c854190ee6804e165718f2
+-vendor/bin/hw/rild|85f98906d824830d0e132fb63ea6adb1b99b08b9
+-vendor/lib/libril-samsung.so|24f397a3a38fab7828c46e74d17f3a3b0d7497ac
+-vendor/lib/libsemnativecarrierfeature.so|dcf01e550feb3a06ab82a47ee79641157dcddb8d
+-vendor/lib64/libril-samsung.so|3609d8c594525de92c97731d901b2fbc5633688f
+-vendor/lib64/libsemnativecarrierfeature.so|723634c41038c781b05550b32d623c37b91a7832
 
 # Surface Composer
 -vendor/lib/hw/hwcomposer.exynos2100.so
