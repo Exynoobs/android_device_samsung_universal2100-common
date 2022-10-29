@@ -123,6 +123,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libepicoperator
 
+# Keystore
+PRODUCT_PACKAGES += \
+    android.system.keystore2
+
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
