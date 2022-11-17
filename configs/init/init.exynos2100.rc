@@ -699,7 +699,7 @@ on boot
     chmod 0664 /dev/cpuset/abnormal/cpus
 
     mkdir /dev/cpuset/moderate
-    write /dev/cpuset/moderate/cpus 0-2,4-6
+    write /dev/cpuset/moderate/cpus 0-2
     copy /dev/cpuset/mems /dev/cpuset/moderate/mems
 
     chown system system /dev/cpuset/moderate
