@@ -1,7 +1,6 @@
-# Proprietary files - from Samsung package version G991BXXU5CVGB, unless pinned
+# Proprietary files - from Samsung package version G991BXXU5DVJC, unless pinned
 
 # Audio
-vendor/etc/a2dp_audio_policy_configuration.xml
 vendor/etc/audio_policy_volumes.xml
 vendor/etc/audio_effects_common.conf
 vendor/etc/audio_effects_sec.xml
@@ -260,6 +259,7 @@ vendor/etc/init/android.hardware.graphics.allocator@4.0-service.rc
 -vendor/lib64/libhermes_cred.so
 -vendor/lib64/libese-grdg.so
 vendor/etc/init/hermesd.rc
+vendor/etc/secnvm/k250a_00000306.img
 
 # Keymaster
 -vendor/lib64/libskeymaster4device.so
@@ -309,8 +309,28 @@ vendor/etc/init/android.hardware.neuralnetworks@1.3-service.eden-drv.rc
 -vendor/lib64/omx/libOMX.Exynos.WMV.Decoder.so
 
 # RIL
--vendor/bin/hw/rild
 -vendor/bin/cbd
+-vendor/bin/hw/rild
+-vendor/lib/libaudio-ril.so
+-vendor/lib/libmdf.so
+-vendor/lib/libsec_semRil.so
+-vendor/lib/libsecnativefeature.so
+-vendor/lib/libsecril-client.so;MODULE=libsecril-client.exynos2100
+-vendor/lib/libsecure_storage.so
+-vendor/lib64/libSemDataProps.so
+-vendor/lib64/libSemTelephonyProps.so
+-vendor/lib64/libmdf.so
+-vendor/lib64/libril_sem.so
+-vendor/lib64/libsec_semRil.so
+-vendor/lib64/libsecnativefeature.so
+-vendor/lib64/libsecril-client.so;MODULE=libsecril-client.exynos2100
+-vendor/lib64/libsecure_storage.so
+-vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so
+-vendor/lib64/vendor.samsung.hardware.radio.bridge@2.1.so
+-vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so
+-vendor/lib64/vendor.samsung.hardware.radio@2.0.so
+-vendor/lib64/vendor.samsung.hardware.radio@2.1.so
+-vendor/lib64/vendor.samsung.hardware.radio@2.2.so
 vendor/etc/init/init.baseband.rc
 vendor/etc/init/init.vendor.rilchip.rc
 vendor/etc/init/init.vendor.rilcommon.rc
@@ -318,24 +338,6 @@ vendor/etc/plmn_delta.bin
 vendor/etc/plmn_delta_attaio.bin
 vendor/etc/plmn_delta_usagsm.bin
 vendor/etc/plmn_se13.bin
--vendor/lib/libaudio-ril.so
--vendor/lib/libmdf.so
--vendor/lib/libsec_semRil.so
--vendor/lib/libsecnativefeature.so
--vendor/lib/libsecure_storage.so
--vendor/lib/libsecril-client.so;MODULE=libsecril-client.exynos2100
--vendor/lib64/libmdf.so
--vendor/lib64/libril_sem.so
--vendor/lib64/libsec_semRil.so
--vendor/lib64/libsecnativefeature.so
--vendor/lib64/libsecure_storage.so
--vendor/lib64/libsecril-client.so;MODULE=libsecril-client.exynos2100
--vendor/lib64/vendor.samsung.hardware.radio.bridge@2.0.so
--vendor/lib64/vendor.samsung.hardware.radio.bridge@2.1.so
--vendor/lib64/vendor.samsung.hardware.radio.channel@2.0.so
--vendor/lib64/vendor.samsung.hardware.radio@2.0.so
--vendor/lib64/vendor.samsung.hardware.radio@2.1.so
--vendor/lib64/vendor.samsung.hardware.radio@2.2.so
 
 # Surface Composer
 -vendor/lib/hw/hwcomposer.exynos2100.so
@@ -374,7 +376,6 @@ vendor/etc/init/teegris_v4.rc
 #NFC
 -vendor/bin/hw/nxp.android.hardware.nfc@1.2-service
 -vendor/lib64/ese_spi_nxp.so
--vendor/lib64/libNfcProperties.so
 -vendor/lib64/nfc_nci_nxpsn.so
 -vendor/lib64/vendor.samsung.hardware.nfc@2.0.so
 vendor/etc/init/nxp.android.hardware.nfc@1.2-service.rc
