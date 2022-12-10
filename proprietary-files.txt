@@ -74,7 +74,6 @@ vendor/etc/usb_audio_policy_configuration.xml
 -vendor/lib/libgiantmscl.so
 -vendor/lib/libhwjpeg.so
 -vendor/lib/libhwjsqz.so
--vendor/lib/libhypervintf.so
 -vendor/lib/libmpbase.so
 -vendor/lib/libsensorlistener.so
 -vendor/lib/libstagefrighthw.so
@@ -94,7 +93,6 @@ vendor/etc/usb_audio_policy_configuration.xml
 -vendor/lib64/libgiantmscl.so
 -vendor/lib64/libhwjpeg.so
 -vendor/lib64/libhwjsqz.so
--vendor/lib64/libhypervintf.so
 -vendor/lib64/libmpbase.so
 -vendor/lib64/libsensorlistener.so
 -vendor/lib64/libstagefrighthw.so
