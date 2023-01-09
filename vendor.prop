@@ -52,6 +52,18 @@ ro.surface_flinger.use_content_detection_for_refresh_rate=true
 ro.surface_flinger.vsync_event_phase_offset_ns=0
 ro.surface_flinger.vsync_sf_event_phase_offset_ns=0
 
+# NFC
+ro.vendor.nfc.feature.chipname=NXP_SN100U
+ro.vendor.nfc.support.advancedsetting=false
+ro.vendor.nfc.support.autoselect=true
+ro.vendor.nfc.support.defaultaid=true
+ro.vendor.nfc.support.nonaid=true
+ro.vendor.nfc.support.othercategory=true
+ro.vendor.nfc.support.uicc=true
+ro.camera.notify_nfc=1
+ro.vendor.nfc.info.antpos=1
+ro.vendor.nfc.support.ese=true
+
 # RIL
 vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
 
