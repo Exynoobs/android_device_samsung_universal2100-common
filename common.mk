@@ -121,6 +121,10 @@ PRODUCT_PACKAGES += \
    libhwbinder \
    libhwbinder.vendor
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.samsung
+
 # OMX
 PRODUCT_PACKAGES += \
     libepicoperator
