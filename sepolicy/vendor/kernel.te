@@ -1,0 +1,30 @@
+# kernel.te
+
+## FIXME ##
+allow kernel device:dir { add_name write remove_name rmdir };
+allow kernel device:chr_file { create setattr getattr unlink };
+allow kernel block_device:dir search;
+
+allow kernel param_block_device:blk_file rw_file_perms;
+
+allow kernel {
+    app_efs_file
+    efs_file
+}:dir r_dir_perms;
+
+allow kernel app_efs_file:file rw_file_perms;
+
+allow kernel sysfs_sec_key:dir r_dir_perms;
+
+allow kernel {
+    sysfs_lcd_writable
+    sysfs_sec_key
+}:file r_file_perms;
+
+allow kernel per_boot_file:file r_file_perms;
+
+allow kernel per_boot_file:file r_file_perms;
+
+allow kernel self:capability mknod;
+
+dontaudit kernel device:blk_file create;

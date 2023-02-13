@@ -1,0 +1,87 @@
+####################################
+# Procfs
+#
+
+genfscon proc /sys/vm/dirty_bytes                    u:object_r:proc_dirty_bytes:s0
+genfscon proc /sys/vm/dirty_background_bytes         u:object_r:proc_dirty_background_bytes:s0
+
+####################################
+# Sysfs
+#
+
+# Backlight
+genfscon sysfs /devices/platform/panel_drv_0/backlight/panel/brightness        u:object_r:sysfs_backlight_writable:s0
+genfscon sysfs /devices/platform/panel_drv_0/backlight/panel/max_brightness    u:object_r:sysfs_backlight_writable:s0
+
+# Battery
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/wc_tx_en               u:object_r:sysfs_battery_writable:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/wc_tx_stop_capacity    u:object_r:sysfs_battery_writable:s0
+
+# Bluetooth
+genfscon sysfs /devices/platform/bluetooth/rfkill/rfkill2/state    u:object_r:sysfs_bt_writable:s0
+
+# Chip-id
+genfscon sysfs /devices/system/chip-id/revision    u:object_r:sysfs_chipid:s0
+
+# Decon
+genfscon sysfs /devices/platform/19f00000.decon_0/hiber_exit    u:object_r:sysfs_decon:s0
+genfscon sysfs /devices/platform/19f00000.decon_0/psr_info      u:object_r:sysfs_decon:s0
+genfscon sysfs /devices/platform/19f00000.decon_0/vsync         u:object_r:sysfs_decon_writable:s0
+genfscon sysfs /devices/platform/19f02000.decon_2/vsync         u:object_r:sysfs_decon:s0
+genfscon sysfs /devices/platform/19f03000.decon_3/vsync         u:object_r:sysfs_decon:s0
+
+# Display
+genfscon sysfs /devices/platform/10ab0000.displayport/extcon/extcon0/cable.0/state    u:object_r:sysfs_displayport_writable:s0
+
+# Ems
+genfscon sysfs /kernel/ems/emstune/req_mode    u:object_r:sysfs_ems_writable:s0
+
+# GPU
+genfscon sysfs /kernel/gpu/gpu_freq_table    u:object_r:sysfs_gpu:s0
+genfscon sysfs /kernel/gpu/gpu_max_clock     u:object_r:sysfs_gpu_writable:s0
+genfscon sysfs /kernel/gpu/gpu_memory        u:object_r:sysfs_gpu_memory:s0
+genfscon sysfs /kernel/gpu/gpu_min_clock     u:object_r:sysfs_gpu_writable:s0
+
+# Input
+genfscon sysfs /devices/virtual/input/input11/enable        u:object_r:sysfs_input_writable:s0
+genfscon sysfs /devices/virtual/input/input11/poll_delay    u:object_r:sysfs_input_writable:s0
+
+# INT
+genfscon sysfs /devices/platform/17000020.devfreq_int/devfreq/17000020.devfreq_int/scaling_devfreq_min    u:object_r:sysfs_int_writable:s0
+
+# LCD
+genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/SVC_OCTA       u:object_r:sysfs_lcd_writable:s0
+genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/lcd_type       u:object_r:sysfs_lcd_writable:s0
+genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/window_type    u:object_r:sysfs_lcd_writable:s0
+
+# Mali
+genfscon sysfs /devices/platform/18500000.mali/power_policy    u:object_r:sysfs_mali_writable:s0
+
+# MIF
+genfscon sysfs /devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min    u:object_r:sysfs_mif_writable:s0
+
+# NPU
+genfscon sysfs /devices/platform/npu_exynos/version    u:object_r:sysfs_npu_version:s0
+
+# Power
+genfscon sysfs /devices/platform/exynos-ufcc/ucc/cstate_control    u:object_r:sysfs_power_writable:s0
+
+# RTC
+genfscon sysfs /devices/platform/15940000.speedy/i2c-16/16-0000/s2mps19-rtc/rtc/rtc0/hctosys    u:object_r:sysfs_rtc:s0
+
+# Sensors
+genfscon sysfs /devices/virtual/sensors/ssp_sensor/ssp_control     u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power            u:object_r:sysfs_sensorhub_writable:s0
+genfscon sysfs /devices/virtual/sec/hall_ic/certify_hall_detect    u:object_r:sysfs_sec_key:s0
+genfscon sysfs /devices/virtual/sec/hall_ic/hall_detect            u:object_r:sysfs_sec_key:s0
+
+# Ufs
+genfscon sysfs /devices/platform/13100000.ufs/clkgate_enable    u:object_r:sysfs_ufs_writable:s0
+
+# V4L
+genfscon sysfs /devices/platform/18940000.smfc/video4linux/video12/name    u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/18950000.smfc/video4linux/video13/name    u:object_r:sysfs_v4l:s0
+
+# Vmscan
+genfscon sysfs /kernel/mm/vmscan/am_app_launch     u:object_r:sysfs_app_launch_writable:s0
+genfscon sysfs /kernel/mm/vmscan/mem_boost_mode    u:object_r:sysfs_mem_boost_writable:s0

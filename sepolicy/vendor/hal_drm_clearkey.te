@@ -1,0 +1,5 @@
+# hal_drm_clearkey.te
+
+hwbinder_use(hal_drm_clearkey)
+
+get_prop(hal_drm_clearkey, hwservicemanager_prop)

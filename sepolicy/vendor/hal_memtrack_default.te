@@ -1,0 +1,21 @@
+# hal_memtrack_default.te
+
+allow hal_memtrack_default {
+    debugfs
+    debugfs_ion
+    debugfs_ion_dma
+    debugfs_mali
+    debugfs_mali_mem
+}:dir r_dir_perms;
+
+allow hal_memtrack_default {
+    debugfs_gpu_memory
+    debugfs_ion
+    debugfs_ion_dma
+    debugfs_mali
+    debugfs_mali_mem
+}:file r_file_perms;
+
+allow hal_memtrack_default sysfs_gpu_memory:dir r_dir_perms;
+
+allow hal_memtrack_default sysfs_gpu_memory:file r_file_perms;
