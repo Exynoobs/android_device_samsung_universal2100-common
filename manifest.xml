@@ -261,16 +261,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.samsung_slsi.hardware.SbwcDecompService</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISbwcDecompService</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISbwcDecompService/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung_slsi.hardware.eden_runtime</name>
         <transport>hwbinder</transport>
         <version>1.0</version>

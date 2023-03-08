@@ -103,12 +103,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.samsung_slsi.hardware.SbwcDecompService</name>
-        <version>1.0</version>
-        <interface>
-            <name>ISbwcDecompService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
 </compatibility-matrix>

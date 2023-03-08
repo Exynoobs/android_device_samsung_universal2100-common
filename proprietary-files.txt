@@ -116,10 +116,6 @@ vendor/lib64/libLocalTM_preview_core.so
 vendor/lib64/libOpenCv.camera.samsung.so
 
 # Codecs
-vendor/bin/hw/vendor.samsung_slsi.hardware.SbwcDecompService@1.0-service
-vendor/lib64/libsbwcwrapper.so
-vendor/lib64/vendor.samsung_slsi.hardware.SbwcDecompService@1.0.so
-vendor/etc/init/vendor.samsung_slsi.hardware.SbwcDecompService@1.0-service.rc
 vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_performance.xml
 vendor/etc/media_profiles_V1_0.xml
