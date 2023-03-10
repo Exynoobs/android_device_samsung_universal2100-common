@@ -45,15 +45,6 @@
             "ResetOnInit": true
         },
         {
-            "Name": "GPUPowerPolicy",
-            "Path": "/sys/devices/platform/18500000.mali/power_policy",
-            "Values": [
-                "always_on",
-                "coarse_demand"
-            ],
-            "ResetOnInit": true
-        },
-        {
             "Name": "EMSTUNE_REQMODE",
             "Path": "/sys/kernel/ems/emstune/req_mode",
             "Values": [
@@ -172,12 +163,6 @@
             "Node": "LPMDisable",
             "Duration": 5000,
             "Value": "1"
-        },
-        {
-            "PowerHint": "LAUNCH",
-            "Node": "GPUPowerPolicy",
-            "Duration": 5000,
-            "Value": "always_on"
         },
         {
             "PowerHint": "LAUNCH",
