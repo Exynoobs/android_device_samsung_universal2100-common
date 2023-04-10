@@ -994,6 +994,7 @@ on fs
 # Set watchdog timer to 40 seconds and pet it every 10 seconds to get a 30 second margin
 # Increase watchdogd priority for keeping up schedule
 service watchdogd /system/bin/watchdogd 10 30
+    user root
     class core
     oneshot
     priority -10
