@@ -11,7 +11,7 @@ persist.sys.sf.hs_mode         u:object_r:exported_system_prop:s0
 ro.hardware.chipname           u:object_r:exported_default_prop:s0
 
 # HWC
-vendor.hwc.exynos.vsync_mode   u:object_r:vendor_hwc_prop:s0
+vendor.hwc                     u:object_r:vendor_hwc_prop:s0
 
 # NFC
 ro.build.type                  u:object_r:exported_system_prop:s0
@@ -21,6 +21,8 @@ vendor.nfc.fw.                 u:object_r:vendor_nfc_prop:s0
 # Radio
 ro.ril.support_cdma            u:object_r:radio_prop:s0
 persist.ril.esim.slotswitch    u:object_r:radio_prop:s0
+ro.ril.svlte1x                 u:object_r:radio_prop:s0
+ro.ril.svdo                    u:object_r:radio_prop:s0
 
 # Samsung
 persist.sys.sec_cid            u:object_r:exported_system_prop:s0
@@ -32,6 +34,8 @@ persist.sys.sec_pcid2          u:object_r:exported_system_prop:s0
 ro.boot.debug_level            u:object_r:debug_level_prop:s0
 ro.build.PDA                   u:object_r:exported_system_prop:s0
 ro.factory.factory_binary      u:object_r:exported_system_prop:s0
+security.securenvm             u:object_r:exported_default_prop:s0
+security.securehw              u:object_r:exported_default_prop:s0
 
 # seHal
 vendor.seHal.init              u:object_r:vendor_sehal_init_prop:s0

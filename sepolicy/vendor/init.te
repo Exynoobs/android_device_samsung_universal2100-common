@@ -23,6 +23,8 @@ allow init self:netlink_kobject_uevent_socket read;
 allow init tz_user_device:chr_file rw_file_perms;
 allow init proc_dirty:file {  write getattr };
 
+allow init sysfs_block_writable:file rw_file_perms;
+
 allow init per_boot_file:file ioctl;
 allowxperm init per_boot_file:file ioctl { F2FS_IOC_SET_PIN_FILE };
 

@@ -1,0 +1,14 @@
+type hermesd, domain;
+type hermesd_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hermesd)
+
+allow hermesd hwservicemanager:binder call;
+allow hermesd hwservicemanager_prop:file { getattr map open read };
+allow hermesd init:unix_stream_socket connectto;
+allow hermesd k250a_device:chr_file { ioctl open read write };
+allow hermesd property_socket:sock_file write;
+allow hermesd ssp_device:chr_file { ioctl open read write };
+allow hermesd tz_user_device:chr_file { ioctl map open read write };
+allow hermesd vendor_tztsdaemon_prop:file { getattr map open read };
+
+dontaudit hermesd exported_default_prop:property_service set;

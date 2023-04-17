@@ -13,8 +13,12 @@ type steady_block_device, dev_type;
 type up_param_block_device, dev_type;
 
 # Camera
+type caminfo_device, dev_type;
 type m2m1shot_device, dev_type;
 type jsqz_device, dev_type;
+
+# k250a
+type k250a_device, dev_type;
 
 # Eden
 type npu_device, dev_type;

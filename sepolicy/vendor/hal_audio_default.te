@@ -17,6 +17,9 @@ allow hal_audio_default rild:unix_stream_socket connectto;
 
 allow hal_audio_default hal_vendor_a2dpoffload_hwservice:hwservice_manager find;
 
+allow hal_audio_default sysfs_abox:file { open };
+
+allow hal_audio_default self:netlink_kobject_uevent_socket { bind create getopt setopt read };
 get_prop(hal_audio_default, vendor_radio_prop)
 
 dontaudit hal_audio_default radio_prop:file r_file_perms;

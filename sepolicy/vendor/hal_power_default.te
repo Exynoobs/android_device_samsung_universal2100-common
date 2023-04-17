@@ -13,6 +13,7 @@ allow hal_power_default {
 }:dir r_dir_perms;
 
 allow hal_power_default {
+    sysfs_ss_writable
     sysfs_app_launch_writable
     sysfs_battery_writable
     sysfs_ems_writable
