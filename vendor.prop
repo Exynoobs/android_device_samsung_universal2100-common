@@ -36,6 +36,8 @@ ro.frp.pst=/dev/block/persistent
 ro.fastbootd.available=true
 
 # Graphics
+debug.sf.high_fps_late_app_phase_offset_ns=0
+debug.sf.high_fps_late_sf_phase_offset_ns=0
 debug.sf.latch_unsignaled=1
 ro.hardware.vulkan=mali
 ro.opengles.version=196610
