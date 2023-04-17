@@ -131,7 +131,6 @@ on init
     chown system system /sys/devices/platform/exynos-migov/control/set_margin
     chown system system /sys/devices/platform/exynos-migov/control/fragutil_thr
     chown system system /sys/devices/platform/exynos-migov/migov/running
-    chown system system /dev/cpu_dma_latency
     chown system system /dev/cluster0_freq_min
     chown system system /dev/cluster1_freq_min
     chown system system /dev/cluster2_freq_min
