@@ -11,6 +11,7 @@ allow hal_camera_default {
 allow hal_camera_default app_efs_file:file r_file_perms;
 
 allow hal_camera_default {
+    caminfo_device
     jsqz_device
     npu_device
 }:chr_file rw_file_perms;

@@ -1,87 +1,206 @@
 ####################################
+# DebugFS
+#
+
+genfscon debugfs /mali/                                                                                                              u:object_r:debugfs_mali:s0
+genfscon debugfs /mali/mem/                                                                                                          u:object_r:debugfs_mali_mem:s0
+genfscon debugfs /dma_buf                                                                                                            u:object_r:debugfs_ion_dma:s0
+genfscon debugfs /ion                                                                                                                u:object_r:debugfs_ion:s0
+genfscon debugfs /mali0/gpu_memory                                                                                                   u:object_r:debugfs_gpu_memory:s0
+
+####################################
 # Procfs
 #
 
-genfscon proc /sys/vm/dirty_bytes                    u:object_r:proc_dirty_bytes:s0
-genfscon proc /sys/vm/dirty_background_bytes         u:object_r:proc_dirty_background_bytes:s0
+genfscon proc /sys/vm/dirty_bytes                                                                                                    u:object_r:proc_dirty_bytes:s0
+genfscon proc /sys/vm/dirty_background_bytes                                                                                         u:object_r:proc_dirty_background_bytes:s0
 
 ####################################
 # Sysfs
 #
 
+# Audio
+genfscon sysfs /devices/platform/18c50000.abox/service                                                                                u:object_r:sysfs_abox:s0
+
 # Backlight
-genfscon sysfs /devices/platform/panel_drv_0/backlight/panel/brightness        u:object_r:sysfs_backlight_writable:s0
-genfscon sysfs /devices/platform/panel_drv_0/backlight/panel/max_brightness    u:object_r:sysfs_backlight_writable:s0
+genfscon sysfs /devices/platform/panel_drv_0/backlight/panel/brightness                                                              u:object_r:sysfs_backlight_writable:s0
+genfscon sysfs /devices/platform/panel_drv_0/backlight/panel/max_brightness                                                          u:object_r:sysfs_backlight_writable:s0
+
+# Block
+genfscon sysfs /devices/platform/13100000.ufs/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes                            u:object_r:sysfs_blk_file:s0
 
 # Battery
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/wc_tx_en               u:object_r:sysfs_battery_writable:s0
-genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/wc_tx_stop_capacity    u:object_r:sysfs_battery_writable:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:sec-direct-charger/power_supply/sec-direct-charger/type u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-16/16-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-17/17-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-6/6-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-4/4-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-16/16-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-17/17-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-4/4-0066/max77705-fuelgauge/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-6/6-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-4/4-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-4/4-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/sec-direct-charger/power_supply/sec-direct-charger u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-16/16-0057/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-17/17-0057/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/105b0000.hsi2c/i2c-5/5-003b/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-6/6-0057/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10580000.hsi2c/i2c-5/5-003b/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-4/4-0057/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/105b0000.hsi2c/i2c-5/5-006f/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/sec-direct-charger/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/battery/power_supply u:object_r:sysfs_battery:s0
 
 # Bluetooth
-genfscon sysfs /devices/platform/bluetooth/rfkill/rfkill2/state    u:object_r:sysfs_bt_writable:s0
+genfscon sysfs /devices/platform/bluetooth/rfkill/rfkill2/state                                                                      u:object_r:sysfs_bt_writable:s0
 
 # Chip-id
-genfscon sysfs /devices/system/chip-id/revision    u:object_r:sysfs_chipid:s0
+genfscon sysfs /devices/system/chip-id/revision                                                                                      u:object_r:sysfs_chipid:s0
 
 # Decon
-genfscon sysfs /devices/platform/19f00000.decon_0/hiber_exit    u:object_r:sysfs_decon:s0
-genfscon sysfs /devices/platform/19f00000.decon_0/psr_info      u:object_r:sysfs_decon:s0
-genfscon sysfs /devices/platform/19f00000.decon_0/vsync         u:object_r:sysfs_decon_writable:s0
-genfscon sysfs /devices/platform/19f02000.decon_2/vsync         u:object_r:sysfs_decon:s0
-genfscon sysfs /devices/platform/19f03000.decon_3/vsync         u:object_r:sysfs_decon:s0
-
-# Display
-genfscon sysfs /devices/platform/10ab0000.displayport/extcon/extcon0/cable.0/state    u:object_r:sysfs_displayport_writable:s0
-
-# Ems
-genfscon sysfs /kernel/ems/emstune/req_mode    u:object_r:sysfs_ems_writable:s0
+genfscon sysfs /devices/platform/19f00000.decon_0/hiber_exit                                                                         u:object_r:sysfs_decon:s0
+genfscon sysfs /devices/platform/19f00000.decon_0/psr_info                                                                           u:object_r:sysfs_decon:s0
+genfscon sysfs /devices/platform/19f00000.decon_0/vsync                                                                              u:object_r:sysfs_decon_writable:s0
+genfscon sysfs /devices/platform/19f02000.decon_2/vsync                                                                              u:object_r:sysfs_decon:s0
+genfscon sysfs /devices/platform/19f03000.decon_3/vsync                                                                              u:object_r:sysfs_decon:s0
 
 # GPU
-genfscon sysfs /kernel/gpu/gpu_freq_table    u:object_r:sysfs_gpu:s0
-genfscon sysfs /kernel/gpu/gpu_max_clock     u:object_r:sysfs_gpu_writable:s0
-genfscon sysfs /kernel/gpu/gpu_memory        u:object_r:sysfs_gpu_memory:s0
-genfscon sysfs /kernel/gpu/gpu_min_clock     u:object_r:sysfs_gpu_writable:s0
+genfscon sysfs /kernel/gpu/gpu_freq_table                                                                                            u:object_r:sysfs_gpu:s0
+genfscon sysfs /kernel/gpu/gpu_max_clock                                                                                             u:object_r:sysfs_gpu_writable:s0
+genfscon sysfs /kernel/gpu/gpu_memory                                                                                                u:object_r:sysfs_gpu_memory:s0
+genfscon sysfs /kernel/gpu/gpu_min_clock                                                                                             u:object_r:sysfs_gpu_writable:s0
+genfscon sysfs /kernel/gpu/gpu_mm_min_clock                                                                                          u:object_r:sysfs_gpu:s0
+genfscon sysfs /kernel/gpu/gpu_poweroff_delay                                                                                        u:object_r:sysfs_gpu:s0
 
 # Input
-genfscon sysfs /devices/virtual/input/input11/enable        u:object_r:sysfs_input_writable:s0
-genfscon sysfs /devices/virtual/input/input11/poll_delay    u:object_r:sysfs_input_writable:s0
+genfscon sysfs /devices/virtual/input/input11/enable                                                                                 u:object_r:sysfs_input_writable:s0
+genfscon sysfs /devices/virtual/input/input11/poll_delay                                                                             u:object_r:sysfs_input_writable:s0
+genfscon sysfs /devices/virtual/input/input4/enable2                                                                                 u:object_r:sysfs_input_writable:s0
 
 # INT
-genfscon sysfs /devices/platform/17000020.devfreq_int/devfreq/17000020.devfreq_int/scaling_devfreq_min    u:object_r:sysfs_int_writable:s0
+genfscon sysfs /devices/platform/17000020.devfreq_int/devfreq/17000020.devfreq_int/scaling_devfreq_min                               u:object_r:sysfs_int_writable:s0
 
 # LCD
-genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/SVC_OCTA       u:object_r:sysfs_lcd_writable:s0
-genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/lcd_type       u:object_r:sysfs_lcd_writable:s0
-genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/window_type    u:object_r:sysfs_lcd_writable:s0
+genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/SVC_OCTA                                                                      u:object_r:sysfs_lcd_writable:s0
+genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/lcd_type                                                                      u:object_r:sysfs_lcd_writable:s0
+genfscon sysfs /devices/platform/panel_drv_0/lcd/panel/window_type                                                                   u:object_r:sysfs_lcd_writable:s0
 
 # Mali
-genfscon sysfs /devices/platform/18500000.mali/power_policy    u:object_r:sysfs_mali_writable:s0
+genfscon sysfs /devices/platform/18500000.mali/power_policy                                                                          u:object_r:sysfs_mali_writable:s0
 
 # MIF
-genfscon sysfs /devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min    u:object_r:sysfs_mif_writable:s0
+genfscon sysfs /devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min                               u:object_r:sysfs_mif_writable:s0
 
 # NPU
-genfscon sysfs /devices/platform/npu_exynos/version    u:object_r:sysfs_npu_version:s0
+genfscon sysfs /devices/platform/npu_exynos/version                                                                                  u:object_r:sysfs_npu_version:s0
 
 # Power
-genfscon sysfs /devices/platform/exynos-ufcc/ucc/cstate_control    u:object_r:sysfs_power_writable:s0
+genfscon sysfs /devices/platform/exynos-ufcc/ucc/cstate_control                                                                      u:object_r:sysfs_power_writable:s0
+genfscon sysfs /devices/platform/exynos-ufcc/ufc/cpufreq_max_limit                                                                    u:object_r:sysfs_power:s0
 
 # RTC
-genfscon sysfs /devices/platform/15940000.speedy/i2c-16/16-0000/s2mps19-rtc/rtc/rtc0/hctosys    u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/platform/15940000.speedy/i2c-16/16-0000/s2mps19-rtc/rtc/rtc0/hctosys                                         u:object_r:sysfs_rtc:s0
 
 # Sensors
-genfscon sysfs /devices/virtual/sensors/ssp_sensor/ssp_control     u:object_r:sysfs_sensors_writable:s0
-genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power            u:object_r:sysfs_sensorhub_writable:s0
-genfscon sysfs /devices/virtual/sec/hall_ic/certify_hall_detect    u:object_r:sysfs_sec_key:s0
-genfscon sysfs /devices/virtual/sec/hall_ic/hall_detect            u:object_r:sysfs_sec_key:s0
+genfscon sysfs /devices/virtual/sensors/ssp_sensor/ssp_control                                                                       u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power                                                                              u:object_r:sysfs_sensorhub_writable:s0
+genfscon sysfs /devices/virtual/sec/hall_ic/certify_hall_detect                                                                      u:object_r:sysfs_sec_key:s0
+genfscon sysfs /devices/virtual/sec/hall_ic/hall_detect                                                                              u:object_r:sysfs_sec_key:s0
 
 # Ufs
-genfscon sysfs /devices/platform/13100000.ufs/clkgate_enable    u:object_r:sysfs_ufs_writable:s0
+genfscon sysfs /devices/platform/13100000.ufs/clkgate_enable                                                                         u:object_r:sysfs_ufs_writable:s0
 
 # V4L
-genfscon sysfs /devices/platform/18940000.smfc/video4linux/video12/name    u:object_r:sysfs_v4l:s0
-genfscon sysfs /devices/platform/18950000.smfc/video4linux/video13/name    u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/18940000.smfc/video4linux/video12/name                                                              u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/18950000.smfc/video4linux/video13/name                                                              u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/mfc/video4linux/video6/name                                                                         u:object_r:sysfs_v4l:s0
+genfscon sysfs /devices/platform/mfc/video4linux/video7/name                                                                         u:object_r:sysfs_v4l:s0
 
 # Vmscan
-genfscon sysfs /kernel/mm/vmscan/am_app_launch     u:object_r:sysfs_app_launch_writable:s0
-genfscon sysfs /kernel/mm/vmscan/mem_boost_mode    u:object_r:sysfs_mem_boost_writable:s0
+genfscon sysfs /kernel/mm/vmscan/am_app_launch                                                                                       u:object_r:sysfs_app_launch_writable:s0
+genfscon sysfs /kernel/mm/vmscan/mem_boost_mode                                                                                      u:object_r:sysfs_mem_boost_writable:s0
+
+# Wakeup
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0057/power_supply/pca9468-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0063/power_supply/sm5451-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0066/max77705-charger/power_supply/max77705-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0066/max77705-charger/power_supply/otg/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0066/max77705-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0066/max77705-fuelgauge/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0066/max77705-usbc/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0057/power_supply/pca9468-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-charger/power_supply/max77705-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-charger/power_supply/otg/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-fuelgauge/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-usbc/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10580000.hsi2c/i2c-1/1-003b/power_supply/mfc-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10580000.hsi2c/i2c-3/3-003b/power_supply/mfc-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-4/4-0066/max77705-charger/power_supply/otg/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10ab0000.displayport/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10e00000.usb/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10e00000.usb/xhci-hcd.3.auto/usb2/2-1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10e00000.usb/xhci-hcd.3.auto/usb2/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10e00000.usb/xhci-hcd.3.auto/usb3/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/10e00000.usb/xhci-hcd.3.auto/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/11014000.spi/spi_master/spi4/spi4.0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/113b0000.pcie/pci0000:00/0000:00:00.0/0000:01:00.0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/11d00000.spi/spi_master/spi1/spi1.0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/14940000.drmdecon/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/14e50000.abox/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/14e90000.fm/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/15510000.vts/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/17030000.is_sensor1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/17040000.is_sensor4/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/17050000.is_sensor0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/17060000.is_sensor2/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/17070000.is_sensor3/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/17080000.is_sensor5/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/17090000.exynos_is/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/18c50000.abox/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/19050000.decon_f/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/19060000.decon_s/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/19070000.decon_t/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/19f00000.decon_0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/19f01000.decon_1/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/19f02000.decon_2/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/19f03000.decon_3/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-14/14-001f/s2mps23-power-keys/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-14/14-001f/s2mps23-rtc/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-14/14-001f/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-16/16-001f/s2mps23-power-keys/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-16/16-001f/s2mps23-rtc/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-16/16-001f/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-17/17-001f/s2mps23-power-keys/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-17/17-001f/s2mps23-rtc/rtc/rtc0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-17/17-001f/s2mps23-rtc/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-17/17-001f/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-power-keys/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/s2mps23-rtc/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-20/20-001f/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15961000/i2c-15/15-002f/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15961000/i2c-17/17-002f/wakeup/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15961000/i2c-18/18-002f/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15961000/i2c-21/21-002f/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/battery/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/bluetooth/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/cpif/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/gpio_keys/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:etspi-spi@0/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:gw9558/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:hall_ic/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:qbt2000/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:sec-direct-charger/power_supply/sec-direct-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/sec-direct-charger/power_supply/sec-direct-charger/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/ssp/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/wireless/wakeup134 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/npu_exynos/wakeup/wakeup69 u:object_r:sysfs_wakeup:s0

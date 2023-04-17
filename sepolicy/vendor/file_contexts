@@ -3,6 +3,7 @@
 #
 
 /(vendor|system/vendor)/bin/hw/gps.sh       u:object_r:gpsd_exec:s0
+/(vendor|system/vendor)/bin/hermesd         u:object_r:hermesd_exec:s0
 
 ####################################
 # Data Files
@@ -19,92 +20,121 @@
 #
 
 # Block
-/dev/block/platform/.+/by-name/blcmd        u:object_r:blcmd_block_device:s0
-/dev/block/platform/.+/by-name/cp_debug     u:object_r:cpdebug_block_device:s0
-/dev/block/platform/.+/by-name/cpefs        u:object_r:cpefs_block_device:s0
-/dev/block/platform/.+/by-name/keystorage   u:object_r:keystorage_block_device:s0
-/dev/block/platform/.+/by-name/nad_refer    u:object_r:nad_refer_block_device:s0
-/dev/block/platform/.+/by-name/optics       u:object_r:optics_block_device:s0
-/dev/block/platform/.+/by-name/param        u:object_r:param_block_device:s0
-/dev/block/platform/.+/by-name/prism        u:object_r:prism_block_device:s0
-/dev/block/platform/.+/by-name/spu          u:object_r:spu_block_device:s0
-/dev/block/platform/.+/by-name/steady       u:object_r:spu_block_device:s0
-/dev/block/platform/.+/by-name/up_param     u:object_r:up_param_block_device:s0
+/dev/block/platform/.+/by-name/blcmd                                                                          u:object_r:blcmd_block_device:s0
+/dev/block/platform/.+/by-name/cp_debug                                                                       u:object_r:cpdebug_block_device:s0
+/dev/block/platform/.+/by-name/cpefs                                                                          u:object_r:cpefs_block_device:s0
+/dev/block/platform/.+/by-name/keystorage                                                                     u:object_r:keystorage_block_device:s0
+/dev/block/platform/.+/by-name/nad_refer                                                                      u:object_r:nad_refer_block_device:s0
+/dev/block/platform/.+/by-name/optics                                                                         u:object_r:optics_block_device:s0
+/dev/block/platform/.+/by-name/param                                                                          u:object_r:param_block_device:s0
+/dev/block/platform/.+/by-name/prism                                                                          u:object_r:prism_block_device:s0
+/dev/block/platform/.+/by-name/spu                                                                            u:object_r:spu_block_device:s0
+/dev/block/platform/.+/by-name/steady                                                                         u:object_r:spu_block_device:s0
+/dev/block/platform/.+/by-name/up_param                                                                       u:object_r:up_param_block_device:s0
+/sys/devices/platform/(.*)/block/sdd/queue/discard_max_bytes                                                  u:object_r:sysfs_block_writable:s0
+/sys/devices/platform/(.*)/block/sd[a-z]+/start                                                               u:object_r:sysfs_block:s0
 
 # Camera
-/dev/jsqz                u:object_r:jsqz_device:s0
-/dev/vertex10            u:object_r:npu_device:s0
+/dev/caminfo                                                                                                  u:object_r:caminfo_device:s0
+/dev/jsqz                                                                                                     u:object_r:jsqz_device:s0
+/dev/vertex10                                                                                                 u:object_r:npu_device:s0
 
 # Fingerprint
-/dev/qbt2000_fd     u:object_r:fp_sensor_device:s0
-/dev/qbt2000_ipc    u:object_r:fp_sensor_device:s0
+/dev/qbt2000_fd                                                                                               u:object_r:fp_sensor_device:s0
+/dev/qbt2000_ipc                                                                                              u:object_r:fp_sensor_device:s0
 
 # Sensors
-/dev/ssp    u:object_r:ssp_device:s0
+/dev/ssp                                                                                                      u:object_r:ssp_device:s0
 
 # Soundtrigger
-/dev/vts_fio_dev(/.*)?    u:object_r:vts_fio_device:s0
+/dev/vts_fio_dev(/.*)?                                                                                        u:object_r:vts_fio_device:s0
 
- # Widevine
-/dev/s5p-smem                          u:object_r:secmem_device:s0
+# Widevine
+/dev/s5p-smem                                                                                                 u:object_r:secmem_device:s0
+
+# Mali
+/dev/mali[0-9]                                                                                                u:object_r:gpu_device:s0
+
+# NFC
+/dev/pn547		                                                                                      u:object_r:nfc_device:s0
+# k250a
+/dev/k250a                                                                                                    u:object_r:k250a_device:s0
 
 ####################################
 # Efs Files
 
 # EFS
-/efs/FactoryApp(/.*)?      u:object_r:app_efs_file:s0
-/efs/biometrics(/.*)?      u:object_r:sec_efs_file:s0
-/efs/cirrus(/.*)?          u:object_r:sec_efs_file:s0
-/efs/cpdebug(/.*)?         u:object_r:cpdebug_efs_file:s0
-/efs/dsms(/.*)?            u:object_r:dsms_efs_file:s0
-/efs/gatekeeper(/.*)?      u:object_r:gatekeeper_efs_file:s0
-/efs/lpm(/.*)?             u:object_r:sec_efs_file:s0
-/efs/pdp_bkup(/.*)?        u:object_r:pdp_efs_file:s0
-/efs/recovery(/.*)?        u:object_r:sec_efs_file:s0
-/efs/sec_efs(/.*)?         u:object_r:sec_efs_file:s0
-/efs/sec_efs/kpm           u:object_r:kpm_efs_file:s0
-/efs/ssm(/.*)?             u:object_r:ssm_efs_file:s0
-/efs/usb_hw_param(/.*)?    u:object_r:sec_efs_file:s0
+/efs/FactoryApp(/.*)?                                                                                         u:object_r:app_efs_file:s0
+/efs/biometrics(/.*)?                                                                                         u:object_r:sec_efs_file:s0
+/efs/cirrus(/.*)?                                                                                             u:object_r:sec_efs_file:s0
+/efs/cpdebug(/.*)?                                                                                            u:object_r:cpdebug_efs_file:s0
+/efs/dsms(/.*)?                                                                                               u:object_r:dsms_efs_file:s0
+/efs/gatekeeper(/.*)?                                                                                         u:object_r:gatekeeper_efs_file:s0
+/efs/lpm(/.*)?                                                                                                u:object_r:sec_efs_file:s0
+/efs/pdp_bkup(/.*)?                                                                                           u:object_r:pdp_efs_file:s0
+/efs/recovery(/.*)?                                                                                           u:object_r:sec_efs_file:s0
+/efs/sec_efs(/.*)?                                                                                            u:object_r:sec_efs_file:s0
+/efs/sec_efs/kpm                                                                                              u:object_r:kpm_efs_file:s0
+/efs/ssm(/.*)?                                                                                                u:object_r:ssm_efs_file:s0
+/efs/usb_hw_param(/.*)?                                                                                       u:object_r:sec_efs_file:s0
 
-/mnt/vendor/efs/wv\.keys   u:object_r:sec_efs_file:s0
+/mnt/vendor/efs/wv\.keys                                                                                      u:object_r:sec_efs_file:s0
 
 ####################################
 # HIDL
 #
-/(vendor|system/vendor)/bin/hw/android\.hardware\.camera\.provider@[0-9]\.[0-9]-service_64.exynos2100              u:object_r:hal_camera_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@[0-9]\.[0-9]_strongbox-service                         u:object_r:hal_keymaster_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@[0-9]\.[0-9]-service\.eden-drv                    u:object_r:hal_neuralnetworks_eden_drv_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.eden_runtime@[0-9]\.[0-9]-service                   u:object_r:hal_vendor_eden_runtime_default_exec:s0
-/vendor/bin/hw/android\.hardware\.secure_element_snxxx@1\.2-service                                                u:object_r:hal_secure_element_default_exec:s0
-/vendor/bin/hw/android\.hardware\.nfc_snxxx@1\.2-service                                                           u:object_r:hal_nfc_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.camera\.provider@[0-9]\.[0-9]-service_64.exynos2100         u:object_r:hal_camera_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@[0-9]\.[0-9]_strongbox-service                    u:object_r:hal_keymaster_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@[0-9]\.[0-9]-service\.eden-drv               u:object_r:hal_neuralnetworks_eden_drv_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.eden_runtime@[0-9]\.[0-9]-service              u:object_r:hal_vendor_eden_runtime_default_exec:s0
+/vendor/bin/hw/android\.hardware\.secure_element_snxxx@1\.2-service                                           u:object_r:hal_secure_element_default_exec:s0
+/vendor/bin/hw/android\.hardware\.nfc_snxxx@1\.2-service                                                      u:object_r:hal_nfc_default_exec:s0
+
 ####################################
 # Same-process HAL files and their dependencies
 #
 
-/(vendor|system/vendor)/lib(64)?/hw/android\.hardware\.graphics\.mapper@[0-9]\.[0-9]-impl-[0-9]\.[0-9]\.so         u:object_r:same_process_hal_file:s0
-
+/(vendor|system/vendor)/lib(64)?/hw/android\.hardware\.graphics\.mapper@[0-9]\.[0-9]-impl-[0-9]\.[0-9]\.so    u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/arm.graphics-V1-ndk_platform.so                                              u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib(64)?/arm.graphics-V2-ndk_platform.so                                              u:object_r:same_process_hal_file:s0
 ####################################
 # Sysfs
+# Audio
+/sys/devices/platform/18c50000.abox/service                                                                   u:object_r:sysfs_abox:s0
 
 # Battery
-/sys/devices/platform/10570000.hsi2c/i2c-0(/.*)                                           u:object_r:sysfs_battery:s0
-/sys/devices/platform/samsung_mobile_device(/.*)/battery/power_supply(/.*)               u:object_r:sysfs_battery:s0
-/sys/devices/platform/samsung_mobile_device(/.*)/sec-direct-charger/power_supply(/.*)    u:object_r:sysfs_battery:s0
+/sys/devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-charger/power_supply/max77705-charger/type	u:object_r:sysfs_batteryinfo:s0
+/sys/devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/type  u:object_r:sysfs_batteryinfo:s0
+
+# Block
+/sys/devices/platform/13100000.ufs/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes                            u:object_r:sysfs_blk_file:s0
+
 
 # Camera
-/sys/devices/virtual/camera/flash/rear_flash          u:object_r:sysfs_camera_writable:s0
-/sys/devices/virtual/camera/rear/fw_update            u:object_r:sysfs_camera_writable:s0
-/sys/devices/virtual/camera/rear/ssrm_camera_info     u:object_r:sysfs_camera_writable:s0
-/sys/devices/virtual/camera(/.*)                      u:object_r:sysfs_camera:s0
+/sys/devices/virtual/camera/flash/rear_flash                                                                  u:object_r:sysfs_camera_writable:s0
+/sys/devices/virtual/camera/rear/fw_update                                                                    u:object_r:sysfs_camera_writable:s0
+/sys/devices/virtual/camera/rear/ssrm_camera_info                                                             u:object_r:sysfs_camera_writable:s0
+/sys/devices/virtual/camera(/.*)                                                                              u:object_r:sysfs_camera:s0
+
+# Cirrus
+/sys/devices/virtual/cirrus/cirrus_cal(/.*)                                                                      u:object_r:vendor_sysfs_cirrus_cal:s0
+
+# Ems
+/sys/kernel/ems/emstune/req_mode                                                                              u:object_r:sysfs_ems:s0
+
+/sys/devices/platform/10ab0000\.displayport/extcon/extcon0/cable\.(0|1)/(name|state)$                        u:object_r:sysfs_displayport_writable:s0
+
+# Input
+/sys/devices/platform/105d0000\.hsi2c/i2c-[0-9]+/([0-9]+-)?0048/input/input[0-9]+/enabled$                    u:object_r:sysfs_ss_writable:s0
 
 # MDNIE
-/sys/devices/platform/panel_drv_0/lcd/panel/mdnie(/.*)    u:object_r:sysfs_lcd_writable:s0
+/sys/devices/platform/panel_drv_0/lcd/panel/mdnie(/.*)                                                        u:object_r:sysfs_lcd_writable:s0
 
 # Sensors
-/sys/devices/platform/11ec0000.spi(/.*)/buffer(/.*)    u:object_r:sysfs_sensors_writable:s0
-/sys/devices/platform/11ec0000.spi(/.*)/poll_delay     u:object_r:sysfs_sensors_writable:s0
-/sys/devices/platform/11ec0000.spi(/.*)/name           u:object_r:sysfs_sensors_writable:s0
+/sys/devices/platform/11ec0000.spi(/.*)/buffer(/.*)                                                           u:object_r:sysfs_sensors_writable:s0
+/sys/devices/platform/11ec0000.spi(/.*)/poll_delay                                                            u:object_r:sysfs_sensors_writable:s0
+/sys/devices/platform/11ec0000.spi(/.*)/name                                                                  u:object_r:sysfs_sensors_writable:s0
 
 # Wakeup devices
-/sys/devices/platform/[a-z0-9]+\.hsi2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/wakeup(/.*)?        u:object_r:sysfs_wakeup:s0
-/sys/devices/platform/samsung_mobile_device(/.*)/[a-z0-9]+/wakeup/                    u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/[a-z0-9]+\.hsi2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/wakeup(/.*)?                                 u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/samsung_mobile_device/samsung_mobile_device:[a-z0-9]+/wakeup/                           u:object_r:sysfs_wakeup:s0
