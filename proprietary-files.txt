@@ -1,4 +1,5 @@
-# Proprietary files - from Samsung package version G991BXXU6EWAF, unless pinned
+
+# Proprietary files - from Samsung package version G991BXXU7EWE1, unless pinned
 
 # Audio
 vendor/etc/audio_policy_volumes.xml
