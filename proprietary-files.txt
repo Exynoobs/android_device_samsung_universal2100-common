@@ -338,6 +338,7 @@ vendor/lib64/libril-samsung.so|3609d8c594525de92c97731d901b2fbc5633688f
 vendor/lib64/libsemnativecarrierfeature.so|723634c41038c781b05550b32d623c37b91a7832
 
 # Surface Composer
+vendor/etc/hdr_samsung_mx.key
 vendor/lib/hw/hwcomposer.exynos2100.so
 vendor/lib/libExynosHWCService.so
 vendor/lib/libepic_helper.so
