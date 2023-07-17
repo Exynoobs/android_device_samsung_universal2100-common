@@ -13,29 +13,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
-soong_config_module_type {
-    name: "exynos2100_model",
-    module_type: "cc_defaults",
-    config_namespace: "exynos2100CameraVars",
-    value_variables: ["exynos2100_model"],
-    properties: ["cppflags"],
-}
-
-exynos2100_model {
-    name: "exynos2100_model_defaults",
-    soong_config_variables: {
-        exynos2100_model: {
-            cppflags: ["-DEXYNOS990_MODEL_%s"],
-        },
-    },
-}
-
 cc_binary {
-    name: "android.hardware.camera.provider@2.5-service_64.exynos2100",
+    name: "android.hardware.camera.provider@2.6-service_64.exynos2100",
     defaults: [
         "hidl_defaults",
-        "exynos2100_model_defaults",
     ],
     compile_multilib: "64",
     proprietary: true,
@@ -44,12 +25,13 @@ cc_binary {
         "SamsungCameraProvider.cpp",
         "service.cpp"
     ],
-    init_rc: ["android.hardware.camera.provider@2.5-service_64.exynos2100.rc"],
+    init_rc: ["android.hardware.camera.provider@2.6-service_64.exynos2100.rc"],
     shared_libs: [
         "android.hardware.camera.provider@2.4",
         "android.hardware.camera.provider@2.4-legacy",
         "android.hardware.camera.provider@2.5",
         "android.hardware.camera.provider@2.5-legacy",
+        "android.hardware.camera.provider@2.6",
         "libbinder",
         "libcamera_metadata",
         "libcutils",
