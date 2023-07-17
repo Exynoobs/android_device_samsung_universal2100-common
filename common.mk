@@ -78,7 +78,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.5-service_64.exynos2100 \
+    android.hardware.camera.provider@2.6-service_64.exynos2100 \
     libhypervintf \
     libsensorndkbridge
 
