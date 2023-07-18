@@ -4,6 +4,11 @@
             "Name": "CPUMaxFreq",
             "Path": "/sys/devices/platform/exynos-ufcc/ufc/cpufreq_max_limit",
             "Values": [
+                "2912000",
+                "2600000",
+                "2184000",
+                "1768000",
+                "1352000",
                 "198250",
                 "-1"
             ],
@@ -14,6 +19,10 @@
             "Path": "/sys/devices/platform/exynos-ufcc/ufc/cpufreq_min_limit",
             "Values": [
                 "2808000",
+                "2496000",
+                "1872000",
+                "1456000",
+                "936000",
                 "-1"
             ],
             "ResetOnInit": true
@@ -22,7 +31,13 @@
             "Name": "GpuMinClock",
             "Path": "/sys/kernel/gpu/gpu_min_clock",
             "Values": [
+                "767000",
+                "676000",
                 "585000",
+                "494000",
+                "403000",
+                "312000",
+                "221000",
                 "-1"
             ],
             "ResetOnInit": true
@@ -31,7 +46,11 @@
             "Name": "GpuMaxClock",
             "Path": "/sys/kernel/gpu/gpu_max_clock",
             "Values": [
+                "858000",
                 "767000",
+                "676000",
+                "585000",
+                "494000",
                 "403000",
                 "-1"
             ],
@@ -71,19 +90,43 @@
             "PowerHint": "SUSTAINED_PERFORMANCE",
             "Node": "CPUMaxFreq",
             "Duration": 0,
-            "Value": "198250"
+            "Value": "2912000"
         },
         {
             "PowerHint": "SUSTAINED_PERFORMANCE",
             "Node": "GpuMaxClock",
             "Duration": 0,
-            "Value": "403000"
+            "Value": "767000"
         },
         {
             "PowerHint": "LAUNCH",
             "Node": "PMQoSCpuDmaLatency",
             "Duration": 5000,
             "Value": "2c"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUMinFreq",
+            "Duration": 0,
+            "Value": "2496000"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "CPUMaxFreq",
+            "Duration": 0,
+            "Value": "2912000"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "GpuMinClock",
+            "Duration": 0,
+            "Value": "767000"
+        },
+        {
+            "PowerHint": "LAUNCH",
+            "Node": "GpuMaxClock",
+            "Duration": 0,
+            "Value": "858000"
         },
         {
             "PowerHint": "CAMERA_LAUNCH",
@@ -143,13 +186,13 @@
             "PowerHint": "EXPENSIVE_RENDERING",
             "Node": "GpuMinClock",
             "Duration": 0,
-            "Value": "585000"
+            "Value": "494000"
         },
         {
             "PowerHint": "EXPENSIVE_RENDERING",
             "Node": "GpuMaxClock",
             "Duration": 0,
-            "Value": "767000"
+            "Value": "858000"
         },
         {
             "PowerHint": "FIXED_PERFORMANCE",
@@ -157,11 +200,29 @@
             "Duration": 0,
             "Value": "2808000"
         },
+	{
+            "PowerHint": "FIXED_PERFORMANCE",
+            "Node": "CPUMaxFreq",
+            "Duration": 0,
+            "Value": "2912000"
+        },
         {
             "PowerHint": "ML_ACC",
             "Node": "PMQoSCpuDmaLatency",
             "Duration": 2000,
             "Value": "2c"
+        },
+	{
+            "PowerHint": "INTERACTIVE",
+            "Node": "GpuMinClock",
+            "Duration": 0,
+            "Value": "403000"
+        },
+	{
+            "PowerHint": "INTERACTIVE",
+            "Node": "GpuMaxClock",
+            "Duration": 0,
+            "Value": "858000"
         },
         {
             "PowerHint": "INTERACTIVE",
