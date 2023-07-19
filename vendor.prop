@@ -79,3 +79,8 @@ ro.vendor.cscsupported=1
 # Samsung hermesd props
 security.securehw.available=false
 security.securenvm.available=false
+
+# Need adb on bringup
+ro.secure=0
+ro.adb.secure=0
+persist.sys.usb.config=adb
