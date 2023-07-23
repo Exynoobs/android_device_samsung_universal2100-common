@@ -26,12 +26,24 @@ using ::android::OK;
 const int kMaxCameraIdLen = 16;
 
 SamsungCameraProvider::SamsungCameraProvider() : LegacyCameraProviderImpl_2_5() {
-   mExtraIDs.push_back(4);
-   mExtraIDs.push_back(20);
-   mExtraIDs.push_back(23);
-   mExtraIDs.push_back(50);
-   mExtraIDs.push_back(52);
-   mExtraIDs.push_back(54);
+#if defined(EXYNOS2100_MODEL_p3s) && defined(EXYNOS2100_MODEL_r9s)
+    // ID=4 is unbinned selfie
+    mExtraIDs.push_back(4);
+#endif
+
+#ifdef EXYNOS2100_MODEL_p3s
+    // ID=50 is second telephoto camera
+    mExtraIDs.push_back(50);
+#endif
+
+    // ID=20 is logical combo of all back cameras
+    mExtraIDs.push_back(20);
+    // ID=21 is logical combo of main and zoom cameras
+    mExtraIDs.push_back(21);
+    // ID=23 is logical combo of main and ultrawide cameras
+    mExtraIDs.push_back(23);
+    // ID=52 is telephoto camera
+    mExtraIDs.push_back(52);
 
     if (!mInitFailed) {
         for (int i : mExtraIDs) {
@@ -101,7 +113,7 @@ Return<void> SamsungCameraProvider::notifyDeviceStateChange(hidl_bitfield<V2_5::
 // Methods from ::android::hardware::camera::provider::V2_6::ICameraProvider follow.
 Return<void> SamsungCameraProvider::getConcurrentStreamingCameraIds(
         ICameraProvider::getConcurrentStreamingCameraIds_cb _hidl_cb) {
-    hidl_vec<hidl_vec<hidl_string>> hidl_camera_id_combinations = {{ "0", "50" }};
+    hidl_vec<hidl_vec<hidl_string>> hidl_camera_id_combinations = {{"0", "2"}, {"2", "52"}, {"0", "52"}};
     _hidl_cb(V1_0::Status::OK, hidl_camera_id_combinations);
     return Void();
 }
