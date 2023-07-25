@@ -13,10 +13,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+soong_config_module_type {
+    name: "exynos2100_model",
+    module_type: "cc_defaults",
+    config_namespace: "exynos2100CameraVars",
+    value_variables: ["exynos2100_model"],
+    properties: ["cppflags"],
+}
+
+exynos2100_model {
+    name: "exynos2100_model_defaults",
+    soong_config_variables: {
+        exynos2100_model: {
+            cppflags: ["-DEXYNOS2100_MODEL_%s"],
+        },
+    },
+}
+
 cc_binary {
     name: "android.hardware.camera.provider@2.6-service_64.exynos2100",
     defaults: [
         "hidl_defaults",
+	"exynos2100_model_defaults",
     ],
     compile_multilib: "64",
     proprietary: true,
