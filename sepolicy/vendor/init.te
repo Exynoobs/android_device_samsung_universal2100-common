@@ -13,6 +13,14 @@ allow init kernel:system module_request;
 
 allow init ram_device:blk_file write;
 
+allow init sysfs_blk_file:file { open };
+
+allow init hal_sbwcdecomp_default_exec:file { execute };
+
+allow init sbwc_vendor_file:file { execute };
+allow init hwc_vendor_file: file { execute };
+allow init same_process_hal_file:file { execute };
+
 allow init tmpfs:lnk_file create;
 
 allow init efs_file:dir mounton;
@@ -24,6 +32,7 @@ allow init tz_user_device:chr_file rw_file_perms;
 allow init proc_dirty:file {  write getattr };
 
 allow init sysfs_block_writable:file rw_file_perms;
+allow init sysfs_sensors_writable:file { open };
 
 allow init per_boot_file:file ioctl;
 allowxperm init per_boot_file:file ioctl { F2FS_IOC_SET_PIN_FILE };

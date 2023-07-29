@@ -82,7 +82,7 @@
 
 ####################################
 # HIDL
-#
+/(vendor|system/vendor)/bin/hw/android.hardware.sensors(@[0-9].[0-9])?-service.samsung-multihal.exynos2100    u:object_r:hal_sensors_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.camera\.provider@[0-9]\.[0-9]-service_64.exynos2100         u:object_r:hal_camera_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@[0-9]\.[0-9]_strongbox-service                    u:object_r:hal_keymaster_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@[0-9]\.[0-9]-service\.eden-drv               u:object_r:hal_neuralnetworks_eden_drv_default_exec:s0
@@ -98,17 +98,22 @@
 /(vendor|system/vendor)/lib(64)?/hw/android\.hardware\.graphics\.mapper@[0-9]\.[0-9]-impl-[0-9]\.[0-9]\.so    u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/arm.graphics-V1-ndk_platform.so                                              u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib(64)?/arm.graphics-V2-ndk_platform.so                                              u:object_r:same_process_hal_file:s0
+
+# Vendor
+/(vendor|system/vendor)/lib(64)?/libsbwcwrapper\.so               u:object_r:sbwc_vendor_file:s0
+/(vendor|system/vendor)/lib(64)?/libexynosgraphicbuffer\.so       u:object_r:hwc_vendor_file:s0
 ####################################
 # Sysfs
 # Audio
 /sys/devices/platform/18c50000.abox/service                                                                   u:object_r:sysfs_abox:s0
 
 # Battery
-/sys/devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-charger/power_supply/max77705-charger/type	u:object_r:sysfs_batteryinfo:s0
-/sys/devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/type  u:object_r:sysfs_batteryinfo:s0
+/sys/class/power_supply/battery/batt_slate_mode                                                               u:object_r:sysfs_battery_writable:s0
+/sys/devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-charger/power_supply/max77705-charger/type         u:object_r:sysfs_batteryinfo:s0
+/sys/devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/type     u:object_r:sysfs_batteryinfo:s0
 
 # Block
-/sys/devices/platform/13100000.ufs/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes                            u:object_r:sysfs_blk_file:s0
+/sys/devices/platform/13100000.ufs/host0/target0:0:0/0:0:0:0/block/sda/queue/discard_max_bytes                u:object_r:sysfs_blk_file:s0
 
 
 # Camera
@@ -123,6 +128,8 @@
 # Ems
 /sys/kernel/ems/emstune/req_mode                                                                              u:object_r:sysfs_ems:s0
 
+# Extcon
+/sys/devices/platform/10ab0000.displayport/extcon/extcon0/state                                              u:object_r:sysfs_displayport_writable:s0
 /sys/devices/platform/10ab0000\.displayport/extcon/extcon0/cable\.(0|1)/(name|state)$                        u:object_r:sysfs_displayport_writable:s0
 
 # Input
@@ -137,5 +144,5 @@
 /sys/devices/platform/11ec0000.spi(/.*)/name                                                                  u:object_r:sysfs_sensors_writable:s0
 
 # Wakeup devices
-/sys/devices/platform/[a-z0-9]+\.hsi2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/wakeup(/.*)?                                 u:object_r:sysfs_wakeup:s0
+/sys/devices/platform/[a-z0-9]+\.hsi2c/i2c-[0-9]+/[0-9]+-[a-z0-9]+/wakeup(/.*)?                               u:object_r:sysfs_wakeup:s0
 /sys/devices/platform/samsung_mobile_device/samsung_mobile_device:[a-z0-9]+/wakeup/                           u:object_r:sysfs_wakeup:s0

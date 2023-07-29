@@ -43,6 +43,7 @@ genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-4/4-0066/max77705-fuelgauge/
 genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-5/5-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-6/6-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/10570000.hsi2c/i2c-4/4-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/type u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/105c0000.hsi2c/i2c-4/4-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/10570000.hsi2c/i2c-2/2-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/10570000.hsi2c/i2c-0/0-0066/max77705-charger/power_supply u:object_r:sysfs_battery:s0
@@ -56,6 +57,7 @@ genfscon sysfs /devices/platform/10570000.hsi2c/i2c-4/4-0057/power_supply u:obje
 genfscon sysfs /devices/platform/105b0000.hsi2c/i2c-5/5-006f/power_supply u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/sec-direct-charger/power_supply u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/battery/power_supply u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/10580000.hsi2c/i2c-1/1-003b/power_supply/mfc-charger/type u:object_r:sysfs_battery:s0
 
 # Bluetooth
 genfscon sysfs /devices/platform/bluetooth/rfkill/rfkill2/state                                                                      u:object_r:sysfs_bt_writable:s0
@@ -108,8 +110,10 @@ genfscon sysfs /devices/platform/exynos-ufcc/ufc/cpufreq_max_limit              
 genfscon sysfs /devices/platform/15940000.speedy/i2c-16/16-0000/s2mps19-rtc/rtc/rtc0/hctosys                                         u:object_r:sysfs_rtc:s0
 
 # Sensors
+genfscon sysfs /devices/virtual/sensors/grip_sensor/name                                                                             u:object_r:sysfs_sensors:s0 
+genfscon sysfs /devices/virtual/sensors/magnetic_sensor/vendor                                                                       u:object_r:sysfs_sensors:s0
 genfscon sysfs /devices/virtual/sensors/ssp_sensor/ssp_control                                                                       u:object_r:sysfs_sensors_writable:s0
-genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power                                                                              u:object_r:sysfs_sensorhub_writable:s0
+genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power                                                                              u:object_r:sysfs_sensors_writable:s0
 genfscon sysfs /devices/virtual/sec/hall_ic/certify_hall_detect                                                                      u:object_r:sysfs_sec_key:s0
 genfscon sysfs /devices/virtual/sec/hall_ic/hall_detect                                                                              u:object_r:sysfs_sec_key:s0
 
@@ -203,4 +207,8 @@ genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:sec
 genfscon sysfs /devices/platform/sec-direct-charger/power_supply/sec-direct-charger/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/ssp/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/wireless/wakeup134 u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/npu_exynos/wakeup/wakeup69 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/battery/wakeup132 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/npu_exynos/wakeup u:object_r:sysfs_wakeup:s0
+genfscon sysfs /devices/platform/acpm_mfd_bus@15960000/i2c-14/14-001f/s2mps23-rtc/rtc/rtc0/wakeup55 u:object_r:sysfs_wakeup:s0
+genfscon sysfs /sys/devices/platform/samsung_mobile_device/samsung_mobile_device:battery/power_supply/usb/wakeup130 u:object_r:sysfs_wakeup:s0
+
