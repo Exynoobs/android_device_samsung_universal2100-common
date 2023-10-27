@@ -991,6 +991,16 @@ on fs
 #load ecd firmware
     write /proc/ecd/load_firmware 1
 
+service vendor.sensors-hal-multihal /vendor/bin/hw/android.hardware.sensors-service.samsung-multihal
+    override
+    class hal
+    user system
+    group system wakelock context_hub input
+    task_profiles ServiceCapacityLow
+    capabilities BLOCK_SUSPEND
+    rlimit rtprio 10 10
+    disabled
+
 # Set watchdog timer to 40 seconds and pet it every 10 seconds to get a 30 second margin
 # Increase watchdogd priority for keeping up schedule
 service watchdogd /system/bin/watchdogd 10 30
