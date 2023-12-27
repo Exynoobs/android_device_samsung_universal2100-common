@@ -67,8 +67,8 @@ PRODUCT_PACKAGES += \
     libkeymaster4_1support.vendor:64
 
 # Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
+#PRODUCT_PACKAGES += \
+#    vendor.lineage.health-service.default
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -278,6 +278,7 @@ PRODUCT_COPY_FILES += \
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0.vendor:64 \
+    android.hardware.thermal@2.0.vendor:64 \
     android.hardware.thermal-service.samsung \
     thermal_symlinks.samsung
 
