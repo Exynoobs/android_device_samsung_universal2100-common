@@ -21,6 +21,7 @@ cc_binary {
     vendor: true,
     relative_install_path: "hw",
     srcs: [
+        "waitForMCUInit.cpp",
         "ConvertUtils.cpp",
         "HalProxyAidl.cpp",
         "service.cpp",

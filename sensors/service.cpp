@@ -18,12 +18,13 @@
 #include <android/binder_manager.h>
 #include <android/binder_process.h>
 #include "HalProxyAidl.h"
+#include "waitForMCUInit.h"
 
 using ::aidl::android::hardware::sensors::implementation::HalProxyAidl;
 
 int main() {
     ABinderProcess_setThreadPoolMaxThreadCount(0);
-
+    mcuInitialize();
     // Make a default multihal sensors service
     auto halProxy = ndk::SharedRefBase::make<HalProxyAidl>();
     const std::string halProxyName = std::string() + HalProxyAidl::descriptor + "/default";
