@@ -69,7 +69,7 @@ function blob_fixup() {
 	vendor/lib*/libwvhidl.so)
             "${PATCHELF}" --replace-needed libprotobuf-cpp-lite-3.9.1.so libprotobuf-cpp-full-3.9.1.so "${2}"
             ;;
-        vendor/lib*/hw/hwcomposer.exynos2100.so|vendor/lib*/sensors.*.so)
+        vendor/lib*/sensors.*.so)
             "${PATCHELF}" --replace-needed libutils.so libutils-v32.so "${2}"
             sed -i 's/_ZN7android6Thread3runEPKcim/_ZN7utils326Thread3runEPKcim/g' "${2}"
             ;;

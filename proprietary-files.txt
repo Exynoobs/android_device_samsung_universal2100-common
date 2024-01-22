@@ -92,31 +92,22 @@ vendor/lib64/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
 
 # Camera dependencies
 vendor/lib/libSEF.quram.so
-vendor/lib/libacryl.so
-vendor/lib/libcsc.so
 vendor/lib/libexynoscamera_plugin.so
 vendor/lib/libexynoscamera_plugin_utils.so
-vendor/lib/libgiantmscl.so
-vendor/lib/libhwjpeg.so
 vendor/lib/libhwjsqz.so
 vendor/lib/libmpbase.so
 vendor/lib/libsensorlistener.so
-vendor/lib/libstagefrighthw.so
 vendor/lib/libuniapi.so
 vendor/lib/libuniplugin.so
 vendor/lib/libvpl.so
 vendor/lib/vendor.samsung.hardware.hyper-V2-ndk_platform.so
 vendor/lib/vendor.samsung.hardware.thermal@1.0.so
 vendor/lib64/libSEF.quram.so
-vendor/lib64/libcsc.so
 vendor/lib64/libexynoscamera_plugin.so
 vendor/lib64/libexynoscamera_plugin_utils.so
-vendor/lib64/libgiantmscl.so
-vendor/lib64/libhwjpeg.so
 vendor/lib64/libhwjsqz.so
 vendor/lib64/libmpbase.so
 vendor/lib64/libsensorlistener.so
-vendor/lib64/libstagefrighthw.so
 vendor/lib64/libuniapi.so
 vendor/lib64/libuniplugin.so
 vendor/lib64/libvkmanager_vendor.so
@@ -263,20 +254,12 @@ vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 vendor/lib64/vendor.samsung.hardware.gnss@2.1.so
 
 # Graphics
-vendor/bin/hw/android.hardware.graphics.allocator@4.0-service
-vendor/etc/init/android.hardware.graphics.allocator@4.0-service.rc
 vendor/lib/arm.graphics-V1-ndk_platform.so
 vendor/lib/egl/libGLES_mali.so
-vendor/lib/hw/android.hardware.graphics.allocator@4.0-impl.so
-vendor/lib/hw/android.hardware.graphics.mapper@4.0-impl.so
 vendor/lib/hw/vulkan.mali.so
-vendor/lib/libion_exynos.so
 vendor/lib64/arm.graphics-V1-ndk_platform.so
 vendor/lib64/egl/libGLES_mali.so
-vendor/lib64/hw/android.hardware.graphics.allocator@4.0-impl.so
-vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl.so
 vendor/lib64/hw/vulkan.mali.so
-vendor/lib64/libion_exynos.so
 
 # Hwvault
 vendor/lib64/libhwvault.so
@@ -299,10 +282,6 @@ vendor/bin/hw/android.hardware.keymaster@4.0_strongbox-service
 vendor/etc/init/android.hardware.keymaster@4.0_strongbox-service.rc
 vendor/lib64/libkeymaster_helper.so
 
-# Memtrack
-vendor/lib/hw/memtrack.exynos2100.so
-vendor/lib64/hw/memtrack.exynos2100.so
-
 # MFC Firmware
 vendor/firmware/mfc/mfc_fw_flash.bin
 
@@ -312,39 +291,6 @@ vendor/etc/init/android.hardware.neuralnetworks@1.3-service.eden-drv.rc
 
 # Neural Networks firmware
 vendor/firmware/libnn.elf
-
-# OMX
-vendor/lib/libExynosOMX_Core.so
-vendor/lib/libExynosOMX_Resourcemanager.so
-vendor/lib/libstagefright_omx_vendor.so
-vendor/lib/omx/libOMX.Exynos.AVC.Decoder.so
-vendor/lib/omx/libOMX.Exynos.AVC.Encoder.so
-vendor/lib/omx/libOMX.Exynos.AVC.WFD.Encoder.so
-vendor/lib/omx/libOMX.Exynos.HEVC.Decoder.so
-vendor/lib/omx/libOMX.Exynos.HEVC.Encoder.so
-vendor/lib/omx/libOMX.Exynos.HEVC.WFD.Encoder.so
-vendor/lib/omx/libOMX.Exynos.MPEG4.Decoder.so
-vendor/lib/omx/libOMX.Exynos.MPEG4.Encoder.so
-vendor/lib/omx/libOMX.Exynos.VP8.Decoder.so
-vendor/lib/omx/libOMX.Exynos.VP8.Encoder.so
-vendor/lib/omx/libOMX.Exynos.VP9.Decoder.so
-vendor/lib/omx/libOMX.Exynos.VP9.Encoder.so
-vendor/lib/omx/libOMX.Exynos.WMV.Decoder.so
-vendor/lib64/libExynosOMX_Core.so
-vendor/lib64/libExynosOMX_Resourcemanager.so
-vendor/lib64/omx/libOMX.Exynos.AVC.Decoder.so
-vendor/lib64/omx/libOMX.Exynos.AVC.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.AVC.WFD.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.HEVC.Decoder.so
-vendor/lib64/omx/libOMX.Exynos.HEVC.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.HEVC.WFD.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.MPEG4.Decoder.so
-vendor/lib64/omx/libOMX.Exynos.MPEG4.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.VP8.Decoder.so
-vendor/lib64/omx/libOMX.Exynos.VP8.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.VP9.Decoder.so
-vendor/lib64/omx/libOMX.Exynos.VP9.Encoder.so
-vendor/lib64/omx/libOMX.Exynos.WMV.Decoder.so
 
 # RIL
 vendor/bin/cbd
@@ -379,36 +325,6 @@ vendor/lib64/libril-samsung.so|3609d8c594525de92c97731d901b2fbc5633688f
 vendor/lib64/libsec-ril-dsds.so|7ce0cf6c55e933b0be12afedebc3385f71e76cac
 vendor/lib64/libsec-ril.so|9ece76a91b148a98756ba51b73ec974a046c80df
 vendor/lib64/libsemnativecarrierfeature.so|723634c41038c781b05550b32d623c37b91a7832
-
-# Surface Composer
-vendor/etc/hdr_samsung_mx.key
-vendor/lib/hw/hwcomposer.exynos2100.so
-vendor/lib/libExynosHWCService.so
-vendor/lib/libepic_helper.so
-vendor/lib/libexynosgraphicbuffer.so
-vendor/lib/libexynosgscaler.so
-vendor/lib/libexynosscaler.so
-vendor/lib/libexynosutils.so
-vendor/lib/libexynosv4l2.so
-vendor/lib/vendor.samsung.libcolor.hardware.so
-vendor/lib/vendor.samsung.libcolor.hdr10plus.so
-vendor/lib64/hw/hwcomposer.exynos2100.so
-vendor/lib64/libExynosHWCService.so
-vendor/lib64/libacryl.so
-vendor/lib64/libepic_helper.so
-vendor/lib64/libexynosgraphicbuffer.so
-vendor/lib64/libexynosgscaler.so
-vendor/lib64/libexynosscaler.so
-vendor/lib64/libexynosutils.so
-vendor/lib64/libexynosv4l2.so
-vendor/lib64/vendor.samsung.libcolor.hardware.so
-vendor/lib64/vendor.samsung.libcolor.hdr10plus.so
-
-# SBWC
-vendor/bin/hw/vendor.samsung_slsi.hardware.SbwcDecompService@1.0-service
-vendor/etc/init/vendor.samsung_slsi.hardware.SbwcDecompService@1.0-service.rc
-vendor/lib64/libsbwcwrapper.so
-vendor/lib64/vendor.samsung_slsi.hardware.SbwcDecompService@1.0.so
 
 # Teegris
 vendor/bin/tzdaemon
