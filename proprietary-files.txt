@@ -258,6 +258,7 @@ vendor/lib/arm.graphics-V1-ndk_platform.so
 vendor/lib/egl/libGLES_mali.so
 vendor/lib/hw/vulkan.mali.so
 vendor/lib64/arm.graphics-V1-ndk_platform.so
+vendor/lib64/libepic_helper.so
 vendor/lib64/egl/libGLES_mali.so
 vendor/lib64/hw/vulkan.mali.so
 
